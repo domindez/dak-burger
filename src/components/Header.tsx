@@ -27,6 +27,7 @@ const Header = () => {
           alt='logo dak burger'
           height={100}
           width={600}
+          priority
         />
       </div>
       <nav style={soccerLeague.style} className={`nav ${isMenuOpen ? 'open' : ''}`}>
