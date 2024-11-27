@@ -13,9 +13,9 @@ import React, {
   forwardRef,
   Children,
   MutableRefObject,
-  RefAttributes,
-} from "react";
-import "../styles/Marquee.scss";
+  RefAttributes
+} from 'react'
+import '../styles/Marquee.scss'
 
 export type MarqueeProps = {
   /**
@@ -59,7 +59,7 @@ export type MarqueeProps = {
    * @type {"left" | "right" | "up" | "down"}
    * @default "left"
    */
-  direction?: "left" | "right" | "up" | "down";
+  direction?: 'left' | 'right' | 'up' | 'down';
   /**
    * @description Speed calculated as pixels/second
    * @type {number}
@@ -122,49 +122,49 @@ export type MarqueeProps = {
   children?: ReactNode;
 } & RefAttributes<HTMLDivElement>;
 
-const Marquee: FC<MarqueeProps> = forwardRef(function Marquee(
+const Marquee: FC<MarqueeProps> = forwardRef(function Marquee (
   {
     style = {},
-    className = "",
+    className = '',
     autoFill = false,
     play = true,
     pauseOnHover = false,
     pauseOnClick = false,
-    direction = "left",
+    direction = 'left',
     speed = 50,
     delay = 0,
     loop = 0,
     gradient = false,
-    gradientColor = "white",
+    gradientColor = 'white',
     gradientWidth = 200,
     onFinish,
     onCycleComplete,
     onMount,
-    children,
+    children
   },
   ref
 ) {
   // React Hooks
-  const [containerWidth, setContainerWidth] = useState(0);
-  const [marqueeWidth, setMarqueeWidth] = useState(0);
-  const [multiplier, setMultiplier] = useState(1);
-  const [isMounted, setIsMounted] = useState(false);
-  const rootRef = useRef<HTMLDivElement>(null);
-  const containerRef = (ref as MutableRefObject<HTMLDivElement>) || rootRef;
-  const marqueeRef = useRef<HTMLDivElement>(null);
+  const [containerWidth, setContainerWidth] = useState(0)
+  const [marqueeWidth, setMarqueeWidth] = useState(0)
+  const [multiplier, setMultiplier] = useState(1)
+  const [isMounted, setIsMounted] = useState(false)
+  const rootRef = useRef<HTMLDivElement>(null)
+  const containerRef = (ref as MutableRefObject<HTMLDivElement>) || rootRef
+  const marqueeRef = useRef<HTMLDivElement>(null)
 
   // Calculate width of container and marquee and set multiplier
   const calculateWidth = useCallback(() => {
     if (marqueeRef.current && containerRef.current) {
-      const containerRect = containerRef.current.getBoundingClientRect();
-      const marqueeRect = marqueeRef.current.getBoundingClientRect();
-      let containerWidth = containerRect.width;
-      let marqueeWidth = marqueeRect.width;
+      const containerRect = containerRef.current.getBoundingClientRect()
+      const marqueeRect = marqueeRef.current.getBoundingClientRect()
+      let containerWidth = containerRect.width
+      let marqueeWidth = marqueeRect.width
 
       // Swap width and height if direction is up or down
-      if (direction === "up" || direction === "down") {
-        containerWidth = containerRect.height;
-        marqueeWidth = marqueeRect.height;
+      if (direction === 'up' || direction === 'down') {
+        containerWidth = containerRect.height
+        marqueeWidth = marqueeRect.height
       }
 
       if (autoFill && containerWidth && marqueeWidth) {
@@ -172,114 +172,114 @@ const Marquee: FC<MarqueeProps> = forwardRef(function Marquee(
           marqueeWidth < containerWidth
             ? Math.ceil(containerWidth / marqueeWidth)
             : 1
-        );
+        )
       } else {
-        setMultiplier(1);
+        setMultiplier(1)
       }
 
-      setContainerWidth(containerWidth);
-      setMarqueeWidth(marqueeWidth);
+      setContainerWidth(containerWidth)
+      setMarqueeWidth(marqueeWidth)
     }
-  }, [autoFill, containerRef, direction]);
+  }, [autoFill, containerRef, direction])
 
   // Calculate width and multiplier on mount and on window resize
   useEffect(() => {
-    if (!isMounted) return;
+    if (!isMounted) return
 
-    calculateWidth();
+    calculateWidth()
     if (marqueeRef.current && containerRef.current) {
-      const resizeObserver = new ResizeObserver(() => calculateWidth());
-      resizeObserver.observe(containerRef.current);
-      resizeObserver.observe(marqueeRef.current);
+      const resizeObserver = new ResizeObserver(() => calculateWidth())
+      resizeObserver.observe(containerRef.current)
+      resizeObserver.observe(marqueeRef.current)
       return () => {
-        if (!resizeObserver) return;
-        resizeObserver.disconnect();
-      };
+        if (!resizeObserver) return
+        resizeObserver.disconnect()
+      }
     }
-  }, [calculateWidth, containerRef, isMounted]);
+  }, [calculateWidth, containerRef, isMounted])
 
   // Recalculate width when children change
   useEffect(() => {
-    calculateWidth();
-  }, [calculateWidth, children]);
+    calculateWidth()
+  }, [calculateWidth, children])
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
+    setIsMounted(true)
+  }, [])
 
   // Runs the onMount callback, if it is a function, when Marquee is mounted.
   useEffect(() => {
-    if (typeof onMount === "function") {
-      onMount();
+    if (typeof onMount === 'function') {
+      onMount()
     }
-  }, []);
+  }, [])
 
   // Animation duration
   const duration = useMemo(() => {
     if (autoFill) {
-      return (marqueeWidth * multiplier) / speed;
+      return (marqueeWidth * multiplier) / speed
     } else {
       return marqueeWidth < containerWidth
         ? containerWidth / speed
-        : marqueeWidth / speed;
+        : marqueeWidth / speed
     }
-  }, [autoFill, containerWidth, marqueeWidth, multiplier, speed]);
+  }, [autoFill, containerWidth, marqueeWidth, multiplier, speed])
 
   const containerStyle = useMemo(
     () => ({
       ...style,
-      ["--pause-on-hover" as string]:
-        !play || pauseOnHover ? "paused" : "running",
-      ["--pause-on-click" as string]:
+      ['--pause-on-hover' as string]:
+        !play || pauseOnHover ? 'paused' : 'running',
+      ['--pause-on-click' as string]:
         !play || (pauseOnHover && !pauseOnClick) || pauseOnClick
-          ? "paused"
-          : "running",
-      ["--width" as string]:
-        direction === "up" || direction === "down" ? `100vh` : "100%",
-      ["--transform" as string]:
-        direction === "up"
-          ? "rotate(-90deg)"
-          : direction === "down"
-          ? "rotate(90deg)"
-          : "none",
+          ? 'paused'
+          : 'running',
+      ['--width' as string]:
+        direction === 'up' || direction === 'down' ? '100vh' : '100%',
+      ['--transform' as string]:
+        direction === 'up'
+          ? 'rotate(-90deg)'
+          : direction === 'down'
+            ? 'rotate(90deg)'
+            : 'none'
     }),
     [style, play, pauseOnHover, pauseOnClick, direction]
-  );
+  )
 
   const gradientStyle = useMemo(
     () => ({
-      ["--gradient-color" as string]: gradientColor,
-      ["--gradient-width" as string]:
-        typeof gradientWidth === "number"
+      ['--gradient-color' as string]: gradientColor,
+      ['--gradient-width' as string]:
+        typeof gradientWidth === 'number'
           ? `${gradientWidth}px`
-          : gradientWidth,
+          : gradientWidth
     }),
     [gradientColor, gradientWidth]
-  );
+  )
 
   const marqueeStyle = useMemo(
     () => ({
-      ["--play" as string]: play ? "running" : "paused",
-      ["--direction" as string]: direction === "left" ? "normal" : "reverse",
-      ["--duration" as string]: `${duration}s`,
-      ["--delay" as string]: `${delay}s`,
-      ["--iteration-count" as string]: !!loop ? `${loop}` : "infinite",
-      ["--min-width" as string]: autoFill ? `auto` : "100%",
+      ['--play' as string]: play ? 'running' : 'paused',
+      ['--direction' as string]: direction === 'left' ? 'normal' : 'reverse',
+      ['--duration' as string]: `${duration}s`,
+      ['--delay' as string]: `${delay}s`,
+      ['--iteration-count' as string]: loop ? `${loop}` : 'infinite',
+      ['--min-width' as string]: autoFill ? 'auto' : '100%'
     }),
     [play, direction, duration, delay, loop, autoFill]
-  );
+  )
 
   const childStyle = useMemo(
     () => ({
-      ["--transform" as string]:
-        direction === "up"
-          ? "rotate(90deg)"
-          : direction === "down"
-          ? "rotate(-90deg)"
-          : "none",
+      ['--transform' as string]:
+        direction === 'up'
+          ? 'rotate(90deg)'
+          : direction === 'down'
+            ? 'rotate(-90deg)'
+            : 'none'
     }),
     [direction]
-  );
+  )
 
   // Render {multiplier} number of children
   const multiplyChildren = useCallback(
@@ -287,51 +287,53 @@ const Marquee: FC<MarqueeProps> = forwardRef(function Marquee(
       return [
         ...Array(
           Number.isFinite(multiplier) && multiplier >= 0 ? multiplier : 0
-        ),
+        )
       ].map((_, i) => (
         <Fragment key={i}>
           {Children.map(children, (child) => {
             return (
-              <div style={childStyle} className="rfm-child">
+              <div style={childStyle} className='rfm-child'>
                 {child}
               </div>
-            );
+            )
           })}
         </Fragment>
-      ));
+      ))
     },
     [childStyle, children]
-  );
+  )
 
-  return !isMounted ? null : (
-    <div
-      ref={containerRef}
-      style={containerStyle}
-      className={"rfm-marquee-container " + className}
-    >
-      {gradient && <div style={gradientStyle} className="rfm-overlay" />}
+  return !isMounted
+    ? null
+    : (
       <div
-        className="rfm-marquee"
-        style={marqueeStyle}
-        onAnimationIteration={onCycleComplete}
-        onAnimationEnd={onFinish}
+        ref={containerRef}
+        style={containerStyle}
+        className={'rfm-marquee-container ' + className}
       >
-        <div className="rfm-initial-child-container" ref={marqueeRef}>
-          {Children.map(children, (child) => {
-            return (
-              <div style={childStyle} className="rfm-child">
-                {child}
-              </div>
-            );
-          })}
+        {gradient && <div style={gradientStyle} className='rfm-overlay' />}
+        <div
+          className='rfm-marquee'
+          style={marqueeStyle}
+          onAnimationIteration={onCycleComplete}
+          onAnimationEnd={onFinish}
+        >
+          <div className='rfm-initial-child-container' ref={marqueeRef}>
+            {Children.map(children, (child) => {
+              return (
+                <div style={childStyle} className='rfm-child'>
+                  {child}
+                </div>
+              )
+            })}
+          </div>
+          {multiplyChildren(multiplier - 1)}
         </div>
-        {multiplyChildren(multiplier - 1)}
+        <div className='rfm-marquee' style={marqueeStyle}>
+          {multiplyChildren(multiplier)}
+        </div>
       </div>
-      <div className="rfm-marquee" style={marqueeStyle}>
-        {multiplyChildren(multiplier)}
-      </div>
-    </div>
-  );
-});
+      )
+})
 
-export default Marquee;
+export default Marquee
