@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import '../styles/Header.scss'
 import Link from 'next/link'
-import { soccerLeague } from '@/fonts'
+import { soccerLeague } from '@/app/fonts/fonts'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)

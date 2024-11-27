@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import '../styles/Globals.scss'
 import { ReactNode } from 'react'
-import { soccerLeague } from '@/fonts'
+import { soccerLeague } from './fonts/fonts'
 
 export const metadata: Metadata = {
   title: 'DAK Burger',
