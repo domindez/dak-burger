@@ -5,7 +5,7 @@ import ArrowToScroll from './ArrowToScroll'
 const Hero = () => {
   return (
     <section className='hero'>
-      <video className='hero-video' autoPlay loop muted playsInline poster='/poster.jpg'>
+      <video className='hero-video' autoPlay loop muted playsInline>
         <source src='/DAK-BURGER-VIDEO-LANDING-HERO.mp4' type='video/mp4' />
       </video>
       <div className='hero-overlay' />
