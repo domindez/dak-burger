@@ -27,7 +27,6 @@ const Header = () => {
           alt='logo dak burger'
           height={100}
           width={600}
-          style={{ width: 'auto' }}
         />
       </div>
       <nav style={soccerLeague.style} className={`nav ${isMenuOpen ? 'open' : ''}`}>
