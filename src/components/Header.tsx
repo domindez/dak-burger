@@ -3,7 +3,6 @@
 // components/Header.jsx
 import { useState } from 'react'
 import Image from 'next/image'
-import { Menu, X } from 'lucide-react'
 import '../styles/Header.scss'
 import Link from 'next/link'
 import { soccerLeague } from '@/app/fonts/fonts'
@@ -21,15 +20,29 @@ const Header = () => {
 
   return (
     <header className='header'>
-      <div className='logo'>
-        <Image
-          src='/logo-horizontal.svg'
-          alt='logo dak burger'
-          height={100}
-          width={600}
-          priority
-        />
+      <Image
+        src='/logo-horizontal.svg'
+        alt='logo dak burger'
+        height={200}
+        width={600}
+        priority
+        className='hide-mb'
+      />
+      <Image
+        src='/burger-logo.svg'
+        alt='logo dak burger'
+        height={200}
+        width={200}
+        priority
+        className='hide-pc'
+      />
+      <div className='action-btns'>
+        <a href='#'>Pedir</a>
+        <a href='#'>Reservar</a>
       </div>
+      <button className='toggleButton' onClick={toggleMenu} aria-label='Toggle menu'>
+        <Image src='/astronaut.svg' alt='toggle menu' width={40} height={40} />
+      </button>
       <nav style={soccerLeague.style} className={`nav ${isMenuOpen ? 'open' : ''}`}>
         <ul>
           <li><Link href='#inicio' onClick={closeMenu}>Inicio</Link></li>
@@ -40,12 +53,6 @@ const Header = () => {
           <li><Link href='#' onClick={closeMenu}>Reserva</Link></li>
         </ul>
       </nav>
-      <button className={` toggleButton ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu} aria-label='Toggle menu'>
-        {isMenuOpen
-          ? <X size={35} />
-          : <Menu size={40} color='white' />}
-        {/* <Image src='/burger-solid.svg' width={35} height={35} alt='toggle menu' />} */}
-      </button>
     </header>
   )
 }

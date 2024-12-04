@@ -7,3 +7,15 @@
 img {
 	max-width: 100%;
 }
+
+.hide-mb {
+	@media (max-width: 1000px) {
+		display: none;
+	}
+}
+
+.hide-pc {
+	@media (min-width: 1000px) {
+		display: none;
+	}
+}
