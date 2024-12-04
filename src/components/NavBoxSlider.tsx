@@ -35,7 +35,7 @@ const NavBoxSlider = () => {
         <Slide>
           <a href='#'>
             <div className='image-container'>
-              <Image src='/gallery/burger3.jpg' width={300} height={300} alt='menu img' />
+              <Image src='/gallery/burger1.jpg' width={300} height={300} alt='menu img' />
             </div>
             <p><ArrowUpRight /> SIGUENOS EN REDES</p>
           </a>
