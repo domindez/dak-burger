@@ -1,7 +1,7 @@
 import BurgerSection from '@/components/BurgerSection'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
-import NavSlider from '@/components/NavSlider'
+import NavBoxSlider from '@/components/NavBoxSlider'
 import Scoreboard from '@/components/Scoreboard'
 
 export default function Home () {
@@ -10,7 +10,7 @@ export default function Home () {
       <Header />
       <BurgerSection />
       <Scoreboard />
-      <NavSlider />
+      <NavBoxSlider />
       <Footer />
     </div>
   )
