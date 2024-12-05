@@ -10,6 +10,7 @@ interface Props {
 }
 
 const Slide = ({ img, buttonText, buttonUrl, externalLink }: Props) => {
+  console.log(buttonUrl)
   return (
     <div className='slide'>
       <Image src={img} width={800} height={800} alt='gottan slide' />

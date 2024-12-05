@@ -8,13 +8,13 @@ import { useEffect, useState, useRef } from 'react'
 const Slider = () => {
   const pcSlides = [
     { img: '/gallery/burger2.jpg', buttonText: 'FROM MALAGA TO THE WORLD', buttonUrl: '#' },
-    { img: '/gallery/burger1.jpg', buttonText: 'NUESTRA CARTA', buttonUrl: '#' },
+    { img: '/gallery/burger1.jpg', buttonText: 'NUESTRA CARTA', buttonUrl: 'menu' },
     { img: '/gallery/burger3.jpg', buttonText: 'SIGUENOS EN REDES', buttonUrl: '#' },
     { img: '/gallery/burger1.jpg', buttonText: 'ESTAMOS EN MALAGA CAPITAL CON BSMASH', buttonUrl: '#' }
   ]
   const mobileSlides = [
     { img: '/gallery/burger2.jpg', buttonText: 'FROM MALAGA TO THE WORLD', buttonUrl: '#' },
-    { img: '/gallery/burger1.jpg', buttonText: 'NUESTRA CARTA', buttonUrl: '#' },
+    { img: '/gallery/burger1.jpg', buttonText: 'NUESTRA CARTA', buttonUrl: 'menu' },
     { img: '/gallery/burger3.jpg', buttonText: 'SIGUENOS EN REDES', buttonUrl: '#' },
     { img: '/gallery/burger1.jpg', buttonText: 'ESTAMOS EN MALAGA CAPITAL CON BSMASH', buttonUrl: '#' }
   ]
