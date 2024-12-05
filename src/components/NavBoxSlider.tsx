@@ -15,7 +15,7 @@ const NavBoxSlider = () => {
   return (
     <div className='nav-box-slider'>
 
-      <div className='slider'>
+      <div className='nav-box-slider__slider'>
         <Slide>
           <a href='#'>
             <div className='image-container'>

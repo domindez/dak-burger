@@ -1,0 +1,22 @@
+.info-section {
+	padding: 50px 10%;
+
+	h2 {
+		font-size: 2em;
+		font-weight: 400;
+		color: #0d4e91;
+		margin-bottom: 20px;
+	}
+	p {
+		font-size: 1.2em;
+	}
+
+	a {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		margin-top: 20px;
+		color: red;
+		font-size: 1.2em;
+	}
+}

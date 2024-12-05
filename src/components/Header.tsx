@@ -6,6 +6,7 @@ import Image from 'next/image'
 import '../styles/Header.scss'
 import Link from 'next/link'
 import { soccerLeague } from '@/app/fonts/fonts'
+import { Rocket } from 'lucide-react'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -26,15 +27,6 @@ const Header = () => {
         height={200}
         width={600}
         priority
-        className='hide-mb'
-      />
-      <Image
-        src='/burger-logo.svg'
-        alt='logo dak burger'
-        height={200}
-        width={200}
-        priority
-        className='hide-pc'
       />
       <div className='action-btns'>
         <a href='#'>Pedir</a>
@@ -44,6 +36,7 @@ const Header = () => {
         <Image src='/astronaut.svg' alt='toggle menu' width={40} height={40} />
       </button>
       <nav style={soccerLeague.style} className={`nav ${isMenuOpen ? 'open' : ''}`}>
+        <Rocket className='close' onClick={closeMenu} />
         <ul>
           <li><Link href='#inicio' onClick={closeMenu}>Inicio</Link></li>
           <li><Link href='#menu' onClick={closeMenu}>Menu</Link></li>

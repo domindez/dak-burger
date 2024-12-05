@@ -1,9 +1,10 @@
+import AboutUsHome from '@/components/AboutUsHome'
 import BurgerSection from '@/components/BurgerSection'
 import CheckMenu from '@/components/CheckMenu'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
-import NavBoxSlider from '@/components/NavBoxSlider'
 import Scoreboard from '@/components/Scoreboard'
+import Slider from '@/components/slider/Slider'
 
 export default function Home () {
   return (
@@ -11,7 +12,8 @@ export default function Home () {
       <Header />
       <BurgerSection />
       <Scoreboard />
-      <NavBoxSlider />
+      <Slider />
+      <AboutUsHome />
       <CheckMenu />
       <Footer />
     </div>
