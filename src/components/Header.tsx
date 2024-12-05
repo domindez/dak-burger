@@ -20,33 +20,39 @@ const Header = () => {
   }
 
   return (
-    <header className='header'>
-      <Image
-        src='/logo-horizontal.svg'
-        alt='logo dak burger'
-        height={200}
-        width={600}
-        priority
-      />
-      <div className='action-btns'>
+    <>
+      <header className='header'>
+        <Image
+          src='/logo-horizontal.svg'
+          alt='logo dak burger'
+          height={200}
+          width={600}
+          priority
+        />
+        <div className='action-btns hide-mb'>
+          <a href='#'>Pedir</a>
+          <a href='#'>Reservar</a>
+        </div>
+        <button className='toggleButton' onClick={toggleMenu} aria-label='Toggle menu'>
+          <Image src='/astronaut.svg' alt='toggle menu' width={40} height={40} />
+        </button>
+        <nav style={soccerLeague.style} className={`nav ${isMenuOpen ? 'open' : ''}`}>
+          <Rocket className='close' onClick={closeMenu} />
+          <ul>
+            <li><Link href='#inicio' onClick={closeMenu}>Inicio</Link></li>
+            <li><Link href='#menu' onClick={closeMenu}>Menu</Link></li>
+            <li><Link href='#sobre' onClick={closeMenu}>Sobre Nosotros</Link></li>
+            <li><Link href='#contacto' onClick={closeMenu}>Contacto</Link></li>
+            <li><Link href='#' onClick={closeMenu}>Pide a domicilio</Link></li>
+            <li><Link href='#' onClick={closeMenu}>Reserva</Link></li>
+          </ul>
+        </nav>
+      </header>
+      <div className='action-btns hide-pc'>
         <a href='#'>Pedir</a>
         <a href='#'>Reservar</a>
       </div>
-      <button className='toggleButton' onClick={toggleMenu} aria-label='Toggle menu'>
-        <Image src='/astronaut.svg' alt='toggle menu' width={40} height={40} />
-      </button>
-      <nav style={soccerLeague.style} className={`nav ${isMenuOpen ? 'open' : ''}`}>
-        <Rocket className='close' onClick={closeMenu} />
-        <ul>
-          <li><Link href='#inicio' onClick={closeMenu}>Inicio</Link></li>
-          <li><Link href='#menu' onClick={closeMenu}>Menu</Link></li>
-          <li><Link href='#sobre' onClick={closeMenu}>Sobre Nosotros</Link></li>
-          <li><Link href='#contacto' onClick={closeMenu}>Contacto</Link></li>
-          <li><Link href='#' onClick={closeMenu}>Pide a domicilio</Link></li>
-          <li><Link href='#' onClick={closeMenu}>Reserva</Link></li>
-        </ul>
-      </nav>
-    </header>
+    </>
   )
 }
 

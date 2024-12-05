@@ -9,14 +9,14 @@ img {
 }
 
 .hide-mb {
-	@media (max-width: 1000px) {
-		display: none;
+	@media (max-width: 768px) {
+		display: none !important;
 	}
 }
 
 .hide-pc {
-	@media (min-width: 1000px) {
-		display: none;
+	@media (min-width: 768px) {
+		display: none !important;
 	}
 }
 
