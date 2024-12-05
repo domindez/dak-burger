@@ -31,10 +31,10 @@
 			position: absolute;
 			bottom: 10%;
 			left: 50%;
-			transform: translate(-50%);
 			text-decoration: none;
 			font-size: 1em;
 			background-color: #ffffff;
+			border: 2px solid #0d4e91;
 			border-radius: 10px;
 			padding: 20px 30px 15px;
 			box-shadow: 0px 0px 5px #00000040;
@@ -43,6 +43,7 @@
 			color: #0d4e91;
 			max-width: 80%;
 			text-align: center;
+			transform: translate(-50%) rotate(-2deg);
 			&:hover{
 				background-color: #0d4e91;
 				color: white;
