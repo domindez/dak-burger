@@ -7,13 +7,14 @@ interface Props {
   buttonText?: string;
   buttonUrl?: string;
   externalLink?: boolean;
+  slideIndex: number
 }
 
-const Slide = ({ img, buttonText, buttonUrl, externalLink }: Props) => {
-  console.log(buttonUrl)
+const Slide = ({ img, buttonText, buttonUrl, externalLink, slideIndex }: Props) => {
+  console.log(slideIndex)
   return (
     <div className='slide'>
-      <Image src={img} width={800} height={800} alt='gottan slide' />
+      <Image src={img} width={800} height={800} alt='dak slide' />
       {buttonText && externalLink
         ? (
           <a href={buttonUrl} target='_blank' rel='noopener noreferrer'>
@@ -22,7 +23,7 @@ const Slide = ({ img, buttonText, buttonUrl, externalLink }: Props) => {
           )
         : (
             buttonText && (
-              <Link href={`/${buttonUrl}`}>
+              <Link href={`/${buttonUrl}`} className={slideIndex === 0 ? 'red-btn' : ''}>
                 {buttonText}
               </Link>
             )

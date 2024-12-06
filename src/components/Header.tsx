@@ -1,7 +1,7 @@
 'use client'
 
 // components/Header.jsx
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import '../styles/Header.scss'
 import Link from 'next/link'
@@ -10,6 +10,7 @@ import { Rocket } from 'lucide-react'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isSticky, setIsSticky] = useState(false)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -19,17 +20,45 @@ const Header = () => {
     setIsMenuOpen(false)
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) { // Puedes ajustar este valor según tus necesidades
+        setIsSticky(true)
+      } else {
+        setIsSticky(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    // Limpia el listener cuando el componente se desmonta
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <>
-      <header className='header'>
-        <Image
-          src='/logo-horizontal.svg'
-          alt='logo dak burger'
-          height={200}
-          width={600}
-          priority
-        />
-        <div className='action-btns hide-mb'>
+      <header className={`header ${isSticky ? 'sticky' : ''}`}>
+        <Link href='/'>
+          <Image
+            src='/logo-horizontal.svg'
+            alt='logo dak burger'
+            height={200}
+            width={600}
+            priority
+            className='hide-mb'
+          />
+          <Image
+            src='/logo-dak-nasa.png'
+            alt='logo dak burger'
+            height={200}
+            width={600}
+            priority
+            className='hide-pc'
+          />
+        </Link>
+        <div className='action-btns'>
           <a href='#'>Pedir</a>
           <a href='#'>Reservar</a>
         </div>
@@ -48,10 +77,10 @@ const Header = () => {
           </ul>
         </nav>
       </header>
-      <div className='action-btns hide-pc'>
+      {/* <div className='action-btns hide-pc'>
         <a href='#'>Pedir</a>
         <a href='#'>Reservar</a>
-      </div>
+      </div> */}
     </>
   )
 }

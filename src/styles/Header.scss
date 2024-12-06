@@ -5,7 +5,14 @@
 	align-items: center;
 	justify-content: space-between;
 	padding: 20px 5%;
-	
+	transition: 0.3s ease-in-out;
+	position: fixed;
+	top: 0;
+	background-color: #ffffffe8;
+	backdrop-filter: blur(2px);
+	width: 100%;
+	z-index: 10;
+	padding: 0px 10px;
 	.mobile-bar {
 		display: block;
 		background-color: red;
@@ -14,6 +21,7 @@
 	img {
 		width: 200px;
 		height: auto;
+		transition: 0.3s ease-in-out;
 	}
 
 	
@@ -24,6 +32,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
+		height: 100vh;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -165,6 +174,7 @@
 		padding: 5px;
 		color: #00236a;
 		width: 40px;
+		flex-shrink: 0;
 		&:focus {
 			outline: none;
 		}
@@ -178,11 +188,20 @@
 	}
 
 	@media (max-width: 768px) {
+		padding: 0px 10px;
 		img {
-			width: 150px;
+			width: 80px;
 			height: auto;
 		}
 	}
+}
+
+.sticky{
+	box-shadow: 5px 0px 10px #00000044;
+	img{
+		width: 50px;
+	}
+
 }
 
 .action-btns {
@@ -211,6 +230,11 @@
 				background-color: red;
 				color: white;
 			}
+		}
+	}
+	@media (max-width: 768px) {
+		a {
+			font-size: 1.5em;
 		}
 	}
 }

@@ -7,18 +7,21 @@ import { useEffect, useState, useRef } from 'react'
 
 const Slider = () => {
   const pcSlides = [
-    { img: '/gallery/burger2.jpg', buttonText: 'FROM MALAGA TO THE WORLD', buttonUrl: '#' },
-    { img: '/gallery/burger1.jpg', buttonText: 'NUESTRA CARTA', buttonUrl: 'menu' },
-    { img: '/gallery/burger3.jpg', buttonText: 'SIGUENOS EN REDES', buttonUrl: '#' },
-    { img: '/gallery/burger1.jpg', buttonText: 'ESTAMOS EN MALAGA CAPITAL CON BSMASH', buttonUrl: '#' }
+    { img: '/gallery/burger1.jpg', buttonText: 'NUESTRO MENU', buttonUrl: 'menu' },
+    { img: '/gallery/burger2.jpg', buttonText: 'RESERVA TU MESA', buttonUrl: 'reserva' },
+    { img: '/gallery/burger2.jpg', buttonText: 'PIDE A DOMICILIO', buttonUrl: '#' },
+    { img: '/gallery/burger1.jpg', buttonText: 'ESTAMOS EN MALAGA CAPITAL CON BSMASH', externalLink: true, buttonUrl: 'https://bsmash.es/' },
+    { img: '/gallery/burger3.jpg', buttonText: 'SIGUENOS EN REDES', buttonUrl: '#' }
   ]
   const mobileSlides = [
-    { img: '/gallery/burger2.jpg', buttonText: 'FROM MALAGA TO THE WORLD', buttonUrl: '#' },
-    { img: '/gallery/burger1.jpg', buttonText: 'NUESTRA CARTA', buttonUrl: 'menu' },
-    { img: '/gallery/burger3.jpg', buttonText: 'SIGUENOS EN REDES', buttonUrl: '#' },
-    { img: '/gallery/burger1.jpg', buttonText: 'ESTAMOS EN MALAGA CAPITAL CON BSMASH', buttonUrl: '#' }
+    { img: '/gallery/burger1.jpg', buttonText: 'NUESTRO MENU', buttonUrl: 'menu' },
+    { img: '/gallery/burger2.jpg', buttonText: 'RESERVA TU MESA', buttonUrl: 'reserva' },
+    { img: '/gallery/burger2.jpg', buttonText: 'PIDE A DOMICILIO', buttonUrl: '#' },
+    { img: '/gallery/burger1.jpg', buttonText: 'ESTAMOS EN MALAGA CAPITAL CON BSMASH', externalLink: true, buttonUrl: 'https://bsmash.es/' },
+    { img: '/gallery/burger3.jpg', buttonText: 'SIGUENOS EN REDES', buttonUrl: '#' }
   ]
 
+  const slideTimer = 0
   const [isMobile, setIsMobile] = useState(false)
   const [slides, setSlides] = useState(pcSlides)
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -68,6 +71,7 @@ const Slider = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
+      if (slideTimer < 1) return
       if (currentSlide >= slides.length - 1 && direction === 1) {
         setDirection(-1)
       } else if (currentSlide <= 0 && direction === -1) {
@@ -76,7 +80,7 @@ const Slider = () => {
       setCurrentSlide((prevSlide) =>
         Math.max(0, Math.min(slides.length - 1, prevSlide + direction))
       )
-    }, 4000)
+    }, slideTimer)
 
     return () => clearInterval(timer)
   }, [currentSlide, direction, slides.length])
@@ -135,7 +139,7 @@ const Slider = () => {
       >
         {slides.map((slide, index) => (
           <div className='slide' key={index}>
-            <Slide {...slide} />
+            <Slide {...slide} slideIndex={index} />
           </div>
         ))}
       </div>

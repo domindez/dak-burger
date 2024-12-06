@@ -84,14 +84,11 @@ const Footer = () => {
             <li>
               <Link href='/terms'>Términos y Condiciones</Link>
             </li>
-            <li>
-              <Link href='/cookies'>Política de Cookies</Link>
-            </li>
           </ul>
         </div>
       </div>
       <div className='footer__copy'>
-        &copy; {new Date().getFullYear()} DAK BURGER. Todos los derechos reservados.
+        &copy; {new Date().getFullYear()} DAK BURGER
         <br />
         <br />
         Web with ❤ by <a href='https://trivify.es'>Trivify</a>

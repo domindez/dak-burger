@@ -1,14 +1,25 @@
 .info-section {
 	padding: 50px 10%;
 
+	.logo-in-about {
+		width: 200px;
+		margin: auto;
+		display: block;
+		height: auto;
+		margin-bottom: 30px;
+	}
+
 	h2 {
 		font-size: 2em;
 		font-weight: 400;
 		color: #0d4e91;
 		margin-bottom: 20px;
+		text-align: center;
 	}
+
 	p {
 		font-size: 1.2em;
+		text-wrap: balance;
 	}
 
 	a {
