@@ -52,7 +52,7 @@ const Header = () => {
         <div className='right-btns'>
           <div className='action-btns'>
             <a href='https://dakburgerlacalademijas.order.app.hd.digital/menus'>Pedir</a>
-            <Link href='#'>Reservar</Link>
+            <Link href='/reserva'>Reservar</Link>
           </div>
           <button className='toggleButton' onClick={toggleMenu} aria-label='Toggle menu'>
             <Image src='/astronaut.svg' alt='toggle menu' width={40} height={40} />
