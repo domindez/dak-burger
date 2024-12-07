@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import '../../../styles/Bookings.scss'
+import MapComponent from '@/components/MapComponent'
 
 const BookingPage = () => {
   const DishWidget = () => {
@@ -38,10 +39,13 @@ const BookingPage = () => {
   }
 
   return (
-    <div className='bookings'>
-      <h2>Reserva tu mesa</h2>
-      <DishWidget />
-    </div>
+    <>
+      <div className='bookings'>
+        <h2>Reserva tu mesa</h2>
+        <DishWidget />
+      </div>
+      <MapComponent />
+    </>
   )
 }
 
