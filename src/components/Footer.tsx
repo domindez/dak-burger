@@ -63,10 +63,10 @@ const Footer = () => {
               <Link href='/'>Inicio</Link>
             </li>
             <li>
-              <Link href='/about'>Conócenos</Link>
+              <Link href='/conocenos'>Conócenos</Link>
             </li>
             <li>
-              <Link href='/services'>Reserva</Link>
+              <Link href='/reserva'>Reserva</Link>
             </li>
             <li>
               <a href='https://dakburgerlacalademijas.order.app.hd.digital/menus'>Pide a domicilio</a>

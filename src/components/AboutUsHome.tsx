@@ -59,7 +59,7 @@ const AboutUsHome = () => {
           cago en tus muelas a peich fistro al ataquerl está la cosa muy malar
           de la pradera.
         </p>
-        <Link href='/about-us'>
+        <Link href='/conocenos'>
           Sigue leyendo <ArrowUpRight />
         </Link>
       </div>
