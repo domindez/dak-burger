@@ -13,19 +13,19 @@
 	width: 100%;
 	z-index: 10;
 	padding: 0px 10px;
-	.mobile-bar {
-		display: block;
-		background-color: red;
-		width: 100%;
-	}
 	img {
-		width: 200px;
+		width: 80px;
 		height: auto;
 		transition: 0.3s ease-in-out;
 	}
 
-	
-
+	.right-btns{
+		display: flex;
+		align-items: center;
+		gap: 50px;
+		flex-grow: 1;
+		justify-content: flex-end;
+	}
 	.nav {
 		position: fixed;
 		top: 0;
@@ -193,15 +193,18 @@
 			width: 80px;
 			height: auto;
 		}
+
+		.right-btns{
+			gap: 10px
+		}
 	}
 }
 
-.sticky{
+.sticky {
 	box-shadow: 5px 0px 10px #00000044;
-	img{
+	img {
 		width: 50px;
 	}
-
 }
 
 .action-btns {

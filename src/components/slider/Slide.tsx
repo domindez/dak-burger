@@ -11,7 +11,6 @@ interface Props {
 }
 
 const Slide = ({ img, buttonText, buttonUrl, externalLink, slideIndex }: Props) => {
-  console.log(slideIndex)
   return (
     <div className='slide'>
       <Image src={img} width={800} height={800} alt='dak slide' />

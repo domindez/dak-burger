@@ -42,29 +42,22 @@ const Header = () => {
       <header className={`header ${isSticky ? 'sticky' : ''}`}>
         <Link href='/'>
           <Image
-            src='/logo-horizontal.svg'
-            alt='logo dak burger'
-            height={200}
-            width={600}
-            priority
-            className='hide-mb'
-          />
-          <Image
             src='/logo-dak-nasa.png'
             alt='logo dak burger'
             height={200}
             width={600}
             priority
-            className='hide-pc'
           />
         </Link>
-        <div className='action-btns'>
-          <a href='#'>Pedir</a>
-          <a href='#'>Reservar</a>
+        <div className='right-btns'>
+          <div className='action-btns'>
+            <a href='https://dakburgerlacalademijas.order.app.hd.digital/menus'>Pedir</a>
+            <Link href='#'>Reservar</Link>
+          </div>
+          <button className='toggleButton' onClick={toggleMenu} aria-label='Toggle menu'>
+            <Image src='/astronaut.svg' alt='toggle menu' width={40} height={40} />
+          </button>
         </div>
-        <button className='toggleButton' onClick={toggleMenu} aria-label='Toggle menu'>
-          <Image src='/astronaut.svg' alt='toggle menu' width={40} height={40} />
-        </button>
         <nav style={soccerLeague.style} className={`nav ${isMenuOpen ? 'open' : ''}`}>
           <Rocket className='close' onClick={closeMenu} />
           <ul>

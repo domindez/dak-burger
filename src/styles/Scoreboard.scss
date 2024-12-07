@@ -29,4 +29,8 @@
 			filter: grayscale(1);
 		}
 	}
+
+	@media (min-width: 768px) {
+	transform: scale(1.02) rotate(1deg);		
+	}
 }
