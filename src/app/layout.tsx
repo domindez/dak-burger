@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import '../styles/Globals.scss'
 import { ReactNode } from 'react'
 import { soccerLeague } from './fonts/fonts'
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 export const metadata: Metadata = {
   title: 'DAK Burger | Las Mejores Hamburguesas en Mijas',
   description: 'En DAK Burger, disfruta de las hamburguesas más deliciosas de Mijas. Reconocidos como la tercera mejor hamburguesa de España. ¡Ven y prueba nuestras creaciones únicas que son la leche!',
@@ -54,6 +56,7 @@ export default function RootLayout ({
   return (
     <html lang='es'>
       <body className={soccerLeague.className}>
+        <GoogleAnalytics gaId='G-F9PHWBQ389' />
         {children}
       </body>
     </html>

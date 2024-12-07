@@ -79,10 +79,7 @@ const Footer = () => {
           <h3 className='footer__heading'>Legales</h3>
           <ul className='footer__list'>
             <li>
-              <Link href='/privacy'>Política de Privacidad</Link>
-            </li>
-            <li>
-              <Link href='/terms'>Términos y Condiciones</Link>
+              <Link href='/cookies'>Política de Privacidad</Link>
             </li>
           </ul>
         </div>
