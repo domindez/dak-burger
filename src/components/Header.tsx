@@ -64,7 +64,6 @@ const Header = () => {
             <li><Link href='/' onClick={closeMenu}>Inicio</Link></li>
             <li><Link href='/menu' onClick={closeMenu}>Menu</Link></li>
             <li><Link href='/about-us' onClick={closeMenu}>Sobre Nosotros</Link></li>
-            <li><Link href='#contacto' onClick={closeMenu}>Contacto</Link></li>
             <li><Link href='#' onClick={closeMenu}>Pide a domicilio</Link></li>
             <li><Link href='#' onClick={closeMenu}>Reserva</Link></li>
           </ul>
