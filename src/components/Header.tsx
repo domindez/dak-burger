@@ -51,7 +51,7 @@ const Header = () => {
         </Link>
         <div className='right-btns'>
           <div className='action-btns'>
-            <a href='https://dakburgerlacalademijas.order.app.hd.digital/menus'>Pedir</a>
+            <a target='_blank' href='https://dakburgerlacalademijas.order.app.hd.digital/menus'>Pedir</a>
             <Link href='/reserva'>Reservar</Link>
           </div>
           <button className='toggleButton' onClick={toggleMenu} aria-label='Toggle menu'>
@@ -64,15 +64,11 @@ const Header = () => {
             <li><Link href='/' onClick={closeMenu}>Inicio</Link></li>
             <li><Link href='/menu' onClick={closeMenu}>Menu</Link></li>
             <li><Link href='/conocenos' onClick={closeMenu}>Sobre Nosotros</Link></li>
-            <li><Link href='#' onClick={closeMenu}>Pide a domicilio</Link></li>
-            <li><Link href='#' onClick={closeMenu}>Reserva</Link></li>
+            <li><a target='_blank' href='https://dakburgerlacalademijas.order.app.hd.digital/menus' onClick={closeMenu}>Pide a domicilio</a></li>
+            <li><Link href='/reserva' onClick={closeMenu}>Reserva</Link></li>
           </ul>
         </nav>
       </header>
-      {/* <div className='action-btns hide-pc'>
-        <a href='#'>Pedir</a>
-        <a href='#'>Reservar</a>
-      </div> */}
     </>
   )
 }
