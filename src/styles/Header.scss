@@ -13,6 +13,8 @@
 	width: 100%;
 	z-index: 10;
 	padding: 0px 10px;
+	height: 70px;
+	transition: 0.3s ease-in-out;
 	img {
 		width: 80px;
 		height: auto;
@@ -190,7 +192,7 @@
 	@media (max-width: 768px) {
 		padding: 0px 10px;
 		img {
-			width: 80px;
+			width: 100px;
 			height: auto;
 		}
 
@@ -200,12 +202,15 @@
 	}
 }
 
-.sticky {
+header.sticky {
 	box-shadow: 5px 0px 10px #00000044;
+	height: 50px;
 	img {
-		width: 50px;
+		width: 80px;
+		height: auto;
 	}
 }
+
 
 .action-btns {
 	display: flex;

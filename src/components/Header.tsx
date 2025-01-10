@@ -42,9 +42,9 @@ const Header = () => {
       <header className={`header ${isSticky ? 'sticky' : ''}`}>
         <Link href='/'>
           <Image
-            src='/logo-dak-nasa.png'
+            src='/logo-horizontal.svg'
             alt='logo dak burger'
-            height={200}
+            height={300}
             width={600}
             priority
           />
