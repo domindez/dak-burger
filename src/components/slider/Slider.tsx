@@ -11,6 +11,7 @@ const Slider = () => {
     { img: '/gallery/burger2.jpg', buttonText: 'RESERVA TU MESA', buttonUrl: 'reserva' },
     { img: '/gallery/burger2.jpg', buttonText: 'PIDE A DOMICILIO', externalLink: true, buttonUrl: 'https://dakburgerlacalademijas.order.app.hd.digital/menus' },
     { img: '/gallery/burger1.jpg', buttonText: 'ESTAMOS EN MALAGA CAPITAL CON BSMASH', externalLink: true, buttonUrl: 'https://bsmash.es/' },
+    { img: '/gallery/burger3.jpg', buttonText: 'NUESTROS RETOS', buttonUrl: 'retos' },
     { img: '/gallery/burger3.jpg', buttonText: 'SIGUENOS EN REDES', buttonUrl: '#' }
   ]
   const mobileSlides = [
@@ -18,6 +19,7 @@ const Slider = () => {
     { img: '/gallery/burger2.jpg', buttonText: 'RESERVA TU MESA', buttonUrl: 'reserva' },
     { img: '/gallery/burger2.jpg', buttonText: 'PIDE A DOMICILIO', externalLink: true, buttonUrl: 'https://dakburgerlacalademijas.order.app.hd.digital/menus' },
     { img: '/gallery/burger1.jpg', buttonText: 'ESTAMOS EN MALAGA CAPITAL CON BSMASH', externalLink: true, buttonUrl: 'https://bsmash.es/' },
+    { img: '/gallery/burger3.jpg', buttonText: 'NUESTROS RETOS', buttonUrl: 'retos' },
     { img: '/gallery/burger3.jpg', buttonText: 'SIGUENOS EN REDES', buttonUrl: '#' }
   ]
 
