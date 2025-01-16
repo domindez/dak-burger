@@ -1,48 +1,133 @@
 .challenges {
-	.challenges-video-container {
-		.title {
-			position: absolute;
-			color: white;
-			z-index: 5;
-			width: 100%;
-			height: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			flex-direction: column;
-			h2 {
-				font-weight: 400;
-				font-size: 3em;
-			}
-		}
-		max-width: 100%;
-		position: relative;
-		z-index: 1;
-		&::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: calc(100% - 4px);
-			background-color: rgba(0, 0, 0, 0.699);
-			z-index: 2;
-		}
-		video {
-			width: 100%;
-			max-height: 300px; // Limita la altura máxima del video
-			object-fit: cover;
-		}
-	}
+  background-color: #f9f9f9;
 
-	.challenges__container{
-		padding: 20px;
-		max-width: 800px;
-		margin: auto;
-		display: flex;
+  .challenges-video-container {
+    .title {
+      position: absolute;
+      color: white;
+      z-index: 5;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      h2 {
+        font-weight: 400;
+        font-size: 3em;
+      }
+    }
+    max-width: 100%;
+    position: relative;
+    z-index: 1;
 
-		@media (max-width: 768px) {
-			flex-direction: column;
-		}
-	}
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: calc(100% - 4px);
+      background-color: rgba(0, 0, 0, 0.699);
+      z-index: 2;
+    }
+
+    video {
+      width: 100%;
+      max-height: 300px; // Limita la altura máxima del video
+      object-fit: cover;
+    }
+  }
+
+  .challenges__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    border-radius: 10px;
+
+    .table-wrapper {
+      /* Contenedor para scroll horizontal en caso de tablas anchas */
+      overflow-x: auto;
+      width: 100%; // Garantiza que ocupe todo el espacio del contenedor
+      margin-top: 1rem; // Espacio opcional
+    }
+
+    table {
+      /* Ocupar el 100% de la .table-wrapper */
+      width: 100%;
+      border-spacing: 10px; /* Espacio entre columnas */
+    }
+
+    th,
+    td {
+      padding: 0.5rem 0px;
+      white-space: nowrap; /* Evita que el texto salte de línea */
+    }
+
+    th {
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+
+    td a {
+      color: #0070f3;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  /* Ajustes generales de tipografía */
+  h2 {
+    font-weight: 400;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Bloques THEWALL y WALLY */
+  #THEWALL,
+  #WALLY {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    h2 {
+      margin-top: 1rem;
+			text-align: center;
+			margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  /* Modo responsive para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .challenges__container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Hacemos la tabla un poco más compacta en móvil */
+    .table-wrapper table {
+      font-size: 0.85rem;
+    }
+  }
 }
