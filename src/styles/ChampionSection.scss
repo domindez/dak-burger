@@ -11,7 +11,7 @@
 		text-align: center;
 		font-size: 2em;
 		position: relative;
-		margin-bottom: -10px;
+		margin-bottom: 0px;
 		z-index: 2;
 		&::before {
 			content: '';
@@ -22,7 +22,7 @@
 			height: 100%;
 			z-index: -1;
 			background-color: #0d4e91;
-			transform: rotate(-2deg) scale(1.05);
+			transform: rotate(-2deg) scale(1.3);
 		}
 	}
 
