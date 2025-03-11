@@ -7,20 +7,18 @@ import { useEffect, useState, useRef } from 'react'
 
 const Slider = () => {
   const pcSlides = [
-    { img: '/gallery/burger1.jpg', buttonText: 'NUESTRO MENU', buttonUrl: 'menu' },
-    { img: '/gallery/burger2.jpg', buttonText: 'RESERVA TU MESA', buttonUrl: 'reserva' },
-    { img: '/gallery/burger2.jpg', buttonText: 'PIDE A DOMICILIO', externalLink: true, buttonUrl: 'https://dakburgerlacalademijas.order.app.hd.digital/menus' },
-    { img: '/gallery/burger1.jpg', buttonText: 'ESTAMOS EN MALAGA CAPITAL CON BSMASH', externalLink: true, buttonUrl: 'https://bsmash.es/' },
-    { img: '/gallery/burger3.jpg', buttonText: 'NUESTROS RETOS', buttonUrl: 'retos' },
-    { img: '/gallery/burger3.jpg', buttonText: 'SIGUENOS EN REDES', buttonUrl: '#' }
+    { img: '/gallery/menu-pc.webp', buttonText: 'NUESTRO MENU', buttonUrl: 'menu' },
+    { img: '/gallery/booking-pc.webp', buttonText: 'RESERVA TU MESA', buttonUrl: 'reserva' },
+    { img: '/gallery/delivery-pc.webp', buttonText: 'PIDE A DOMICILIO', externalLink: true, buttonUrl: 'https://dakburgerlacalademijas.order.app.hd.digital/menus' },
+    { img: '/gallery/bsmash-pc.webp', buttonText: 'ESTAMOS EN MALAGA CAPITAL CON BSMASH', externalLink: true, buttonUrl: 'https://bsmash.es/' },
+    { img: '/gallery/bsmash-pc.webp', buttonText: 'SIGUENOS EN REDES', buttonUrl: '#' }
   ]
   const mobileSlides = [
-    { img: '/gallery/burger1.jpg', buttonText: 'NUESTRO MENU', buttonUrl: 'menu' },
-    { img: '/gallery/burger2.jpg', buttonText: 'RESERVA TU MESA', buttonUrl: 'reserva' },
-    { img: '/gallery/burger2.jpg', buttonText: 'PIDE A DOMICILIO', externalLink: true, buttonUrl: 'https://dakburgerlacalademijas.order.app.hd.digital/menus' },
-    { img: '/gallery/burger1.jpg', buttonText: 'ESTAMOS EN MALAGA CAPITAL CON BSMASH', externalLink: true, buttonUrl: 'https://bsmash.es/' },
-    { img: '/gallery/burger3.jpg', buttonText: 'NUESTROS RETOS', buttonUrl: 'retos' },
-    { img: '/gallery/burger3.jpg', buttonText: 'SIGUENOS EN REDES', buttonUrl: '#' }
+    { img: '/gallery/menu.webp', buttonText: 'NUESTRO MENU', buttonUrl: 'menu' },
+    { img: '/gallery/booking.webp', buttonText: 'RESERVA TU MESA', buttonUrl: 'reserva' },
+    { img: '/gallery/delivery.webp', buttonText: 'PIDE A DOMICILIO', externalLink: true, buttonUrl: 'https://dakburgerlacalademijas.order.app.hd.digital/menus' },
+    { img: '/gallery/bsmash.webp', buttonText: 'ESTAMOS EN MALAGA CAPITAL CON BSMASH', externalLink: true, buttonUrl: 'https://bsmash.es/' },
+    { img: '/gallery/bsmash.webp', buttonText: 'SIGUENOS EN REDES', buttonUrl: '#' }
   ]
 
   const slideTimer = 0

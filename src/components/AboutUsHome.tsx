@@ -53,11 +53,7 @@ const AboutUsHome = () => {
       <div className='info'>
         <h2>Como empezo todo</h2>
         <p className={roboto.className}>
-          Lorem fistrum fistro amatomaa está la cosa muy malar condemor ese que
-          llega pecador. Jarl ese que llega te voy a borrar el cerito ese pedazo
-          de. Va usté muy cargadoo jarl ese que llega te va a hasé pupitaa me
-          cago en tus muelas a peich fistro al ataquerl está la cosa muy malar
-          de la pradera.
+          Nacimos en plena pandemia, en 2020, con mucha ilusión y también un poco de miedo. Éramos solo tres personas con un objetivo claro: hacer las burgers que siempre habíamos querido comer. Nuestro fundador, Domingo González, apostó por un pequeño local en La Cala de Mijas, sin imaginar hasta dónde llegaríamos...
         </p>
         <Link href='/conocenos'>
           Sigue leyendo <ArrowUpRight />

@@ -6,6 +6,12 @@
 	position: relative; // Para posicionar elementos si es necesario
 	overflow: hidden; // Para evitar desbordes visuales
 	max-height: 80vh;
+
+	img{
+		width: 100%;
+		height: auto;
+	}
+
 	video {
 		width: 100%;
 		height: auto;

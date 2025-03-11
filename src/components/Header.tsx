@@ -64,7 +64,7 @@ const Header = () => {
             <li><Link href='/' onClick={closeMenu}>Inicio</Link></li>
             <li><Link href='/menu' onClick={closeMenu}>Menu</Link></li>
             <li><Link href='/conocenos' onClick={closeMenu}>Sobre Nosotros</Link></li>
-            <li><Link href='/retos' onClick={closeMenu}>Retos</Link></li>
+            {/* <li><Link href='/retos' onClick={closeMenu}>Retos</Link></li> */}
             <li><a target='_blank' href='https://dakburgerlacalademijas.order.app.hd.digital/menus' onClick={closeMenu}>Pide a domicilio</a></li>
             <li><Link href='/reserva' onClick={closeMenu}>Reserva</Link></li>
           </ul>

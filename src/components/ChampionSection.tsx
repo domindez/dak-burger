@@ -45,7 +45,7 @@ const ChampionSection = () => {
       <div className='image'>
         <Image
           className='champion-burger'
-          src='/burger.png'
+          src='/gallery/champions.webp'
           height={600}
           width={600}
           alt='champion burger dak'
