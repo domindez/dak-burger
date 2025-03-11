@@ -1,6 +1,9 @@
 .champion-section {
 	display: flex;
 	flex-direction: column;
+	background-color: black;
+	color: white;
+	padding-bottom: 50px;
 	.champion-tittle-mb {
 		font-weight: 400;
 		color: white;
@@ -54,8 +57,8 @@
 		gap: 20px;
 		align-items: center;
 		overflow: hidden;
-		background-color: black;
 		color: white;
+		padding-bottom: 0px;
 		.image {
 			width: 50%;
 			height: 100%;
