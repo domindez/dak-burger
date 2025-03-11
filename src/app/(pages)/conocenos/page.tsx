@@ -132,54 +132,6 @@ const AboutUs = () => {
           Esto es solo el comienzo. Lo que vendrá después, no lo sabemos… Pero lo que sí sabemos es que seguiremos
           llevando <strong>DAK BURGER</strong> de Málaga al mundo. 🚀🍔
         </p>
-        <h2>
-          <strong>DAK BURGER EN THE CHAMPIONS BURGER 2025</strong>
-        </h2>
-        <p>
-          Tras el éxito del año pasado con nuestra <strong>Stellar</strong>, ganadora de:
-        </p>
-        <ul>
-          <li>
-            <strong>🏆 Mejor burger de Málaga</strong>
-          </li>
-          <li>
-            <strong>🥈 Segunda mejor de Europa</strong>
-          </li>
-          <li>
-            <strong>🥉 Tercera mejor de España</strong>
-          </li>
-        </ul>
-        <p>
-          Este año volvemos con <strong>La Galáctica</strong>, una burger de otro planeta.
-        </p>
-        <p>
-          <strong>¿Qué la hace especial?</strong>
-        </p>
-        <ul>
-          <li>
-            <strong>🥩 Brisket ahumado caramelizado</strong>, el protagonista absoluto.
-          </li>
-          <li>
-            <strong>🔥 Carne de chuletón de vaca nacional</strong>, jugosa y llena de sabor.
-          </li>
-          <li>
-            <strong>🧀 Cheddar rojo madurado</strong>, fundido a la perfección.
-          </li>
-          <li>
-            <strong>🧅 Onion bits</strong> para un toque crujiente.
-          </li>
-          <li>
-            <strong>🌟 Salsa galáctica</strong>, un secreto que te hará viajar por el universo.
-          </li>
-          <li>
-            <strong>🌙 Polvo lunar</strong>, nuestro toque mítico para llevarla al infinito.
-          </li>
-        </ul>
-        <p className='link'>
-          <a href='https://thechampionsburger.es/' target='_blank'>
-            Mira en qué ciudad nos encontramos en: thechampionsburger.es
-          </a>
-        </p>
       </div>
     </div>
   )

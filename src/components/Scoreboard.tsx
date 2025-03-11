@@ -10,10 +10,9 @@ const Scoreboard = () => {
       <div className='marquee'>
         <Marquee autoFill speed={100}>
 
-          <p>GANADORES SHOWDOWN 2025 <Rocket /></p>
-          <p className='odd'>TOP10 MEJORES BURGERS DE ESPANA <Rocket /></p>
-          <p>TERCERA MEJOR HAMBURGUESA DE ESPANA CHAMPIONS BURGER <Rocket /></p>
-
+          <p> SEGUNDA MEJOR BURGER DE EUROPA 2024 <Rocket /></p>
+          <p className='odd'>TERCERA MEJOR BURGER DE ESPAÑA  2024 <Rocket /></p>
+          <p>MEJOR BURGER DE MÁLAGA 2024 <Rocket /></p>
         </Marquee>
       </div>
     </div>
