@@ -11,8 +11,8 @@ const Scoreboard = () => {
         <Marquee autoFill speed={100}>
 
           <p> SEGUNDA MEJOR BURGER DE EUROPA 2024 <Rocket /></p>
-          <p className='odd'>TERCERA MEJOR BURGER DE ESPAÑA  2024 <Rocket /></p>
-          <p>MEJOR BURGER DE MÁLAGA 2024 <Rocket /></p>
+          <p className='odd'>TERCERA MEJOR BURGER DE ESPANA  2024 <Rocket /></p>
+          <p>MEJOR BURGER DE MALAGA 2024 <Rocket /></p>
         </Marquee>
       </div>
     </div>
