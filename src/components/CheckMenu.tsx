@@ -7,7 +7,7 @@ const CheckMenu = () => {
     <div className='check-menu'>
       <div className='img-container'>
         <Image src='/gallery/burger1.jpg' alt='menu dak burger' height={800} width={800} />
-        <Link href='/menu'>Consulta nuestro Menu</Link>
+        <Link href='/carta'>Consulta nuestro Menu</Link>
       </div>
     </div>
   )
