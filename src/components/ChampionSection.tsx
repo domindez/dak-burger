@@ -77,7 +77,10 @@ const ChampionSection = () => {
           </p>
           <ul>
             <li>
-              <strong>🥩 Brisket ahumado caramelizado</strong>, el protagonista absoluto.
+              <strong>🥩 Pulled beef</strong>, el protagonista absoluto.
+            </li>
+            <li>
+              <strong>🥓 Bacon bits</strong>, dorados y adictivos.
             </li>
             <li>
               <strong>🔥 Carne de chuletón de vaca nacional</strong>, jugosa y llena de sabor.
