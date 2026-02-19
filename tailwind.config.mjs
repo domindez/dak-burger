@@ -43,7 +43,7 @@ export default {
       keyframes: {
         marquee: {
           '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(-25%)' },
         },
         fadeIn: {
           '0%': { opacity: '0' },
