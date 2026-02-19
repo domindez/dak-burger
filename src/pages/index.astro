@@ -1,0 +1,81 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ScoreTape from '@/components/ScoreTape.astro';
+import HomeSlider from '@/components/HomeSlider.astro';
+import HomeAbout from '@/components/HomeAbout.astro';
+import MapEmbed from '@/components/MapEmbed.astro';
+---
+
+<BaseLayout>
+  <!-- Hero -->
+  <section class="relative h-[100dvh] min-h-[560px] overflow-hidden md:h-screen md:min-h-[600px]">
+    <img src="/gallery/hero-pc.webp" alt="DAK Burger" class="hidden h-full w-full object-cover md:block" />
+    <img src="/gallery/hero.webp" alt="DAK Burger" class="block h-full w-full object-cover md:hidden" />
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/55 via-dark/45 to-dark/85"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(13,78,145,0.45),transparent_40%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_85%_75%,rgba(239,68,68,0.22),transparent_45%)]"></div>
+    <div class="absolute -left-16 top-24 h-52 w-52 rounded-full border border-white/15"></div>
+    <div class="absolute -right-20 bottom-32 h-72 w-72 rounded-full border border-primary-200/20"></div>
+    <div class="absolute right-16 top-40 hidden h-1.5 w-1.5 rounded-full bg-white/70 md:block nasa-twinkle"></div>
+    <div class="absolute right-28 top-52 hidden h-1 w-1 rounded-full bg-primary-100/90 md:block nasa-twinkle [animation-delay:1.2s]"></div>
+    <div class="absolute inset-0 flex flex-col items-center justify-center px-4 pb-20 pt-20 text-center md:pb-0 md:pt-0">
+      <p class="animate-fade-in rounded-full border border-primary-200/60 bg-primary/35 px-5 py-2 text-xs font-bold uppercase tracking-[0.25em] text-white backdrop-blur-sm md:text-sm">
+        FROM MALAGA TO THE WORLD
+      </p>
+      <h1 class="mt-6 animate-slide-up font-heading text-6xl text-white drop-shadow-2xl md:text-8xl lg:text-9xl">
+        DAK BURGER
+      </h1>
+      <p class="mt-4 animate-slide-up text-lg font-light text-white/90 md:text-xl [animation-delay:0.15s]">
+        &nbsp;
+      </p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4 animate-slide-up [animation-delay:0.3s]">
+        <a href="/carta" class="btn-primary h-12 border-2 border-transparent px-8">Ver Menu</a>
+        <a href="/reserva" class="btn h-12 border-2 border-white text-white hover:bg-white hover:text-dark">Reservar Mesa</a>
+      </div>
+    </div>
+    <!-- ScoreTape at bottom of hero -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <ScoreTape />
+    </div>
+  </section>
+
+  <HomeSlider />
+
+  <div class="relative h-0" aria-hidden="true">
+    <div class="page-container pointer-events-none absolute inset-x-0 -top-1 z-10">
+      <div class="mx-auto h-px w-full max-w-4xl bg-gradient-to-r from-transparent via-primary/35 to-transparent"></div>
+      <div class="mx-auto mt-2 h-2 w-2 rounded-full bg-accent/70"></div>
+    </div>
+  </div>
+
+  <HomeAbout />
+
+  <!-- CTA Banner -->
+  <section class="relative mb-16 overflow-hidden bg-primary py-20 md:py-24" data-reveal>
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute -left-20 -top-20 h-72 w-72 rounded-full bg-white"></div>
+      <div class="absolute -bottom-20 -right-20 h-96 w-96 rounded-full bg-white"></div>
+    </div>
+    <div class="page-container relative text-center">
+      <h2 class="font-heading text-4xl text-white md:text-6xl">Tienes hambre?</h2>
+      <p class="mt-4 text-lg text-white/80">Haz tu pedido o reserva tu mesa ahora mismo</p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a href="https://dakburgerlacalademijas.order.app.hd.digital/menus" target="_blank" rel="noopener noreferrer"
+          class="btn-accent px-8">Pedir a domicilio</a>
+        <a href="/reserva" class="btn border-2 border-white text-white hover:bg-white hover:text-primary">Reservar</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-6 md:pb-8">
+    <MapEmbed />
+  </section>
+</BaseLayout>
+
+<style>
+  @keyframes heroTwinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+  }
+  .nasa-twinkle { animation: heroTwinkle 3.4s ease-in-out infinite; }
+</style>

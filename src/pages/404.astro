@@ -1,0 +1,19 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="404 | DAK Burger">
+  <section class="relative flex min-h-[80vh] flex-col items-center justify-center overflow-hidden bg-dark px-4 text-center">
+    <!-- Decorative circles -->
+    <div class="absolute -left-32 -top-32 h-64 w-64 rounded-full bg-primary/10"></div>
+    <div class="absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-accent/10"></div>
+
+    <span class="font-heading text-[10rem] leading-none text-primary/20 md:text-[14rem]">404</span>
+    <h1 class="-mt-8 font-heading text-4xl text-white md:text-5xl">Pagina no encontrada</h1>
+    <p class="mt-4 max-w-md text-slate-400">Parece que esta burger se ha escapado. Vuelve al inicio y descubre todo lo que tenemos para ti.</p>
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+      <a href="/" class="btn-primary">Volver al inicio</a>
+      <a href="/carta" class="btn border-2 border-white/30 text-white hover:bg-white hover:text-dark">Ver el menu</a>
+    </div>
+  </section>
+</BaseLayout>
